@@ -13,6 +13,8 @@ app.use("/api/income", require("./routes/incomeRoutes"));
 app.use("/api/expense", require("./routes/expenseRoutes"));
 app.use("/api/animals", require("./routes/animalRoutes"));
 app.use("/api/eggs", require("./routes/eggRoutes"));
+app.use("/api/feed", require("./routes/feedRoutes"));
+app.use("/api/health", require("./routes/healthRoutes"));
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("MongoDB Connected"))
