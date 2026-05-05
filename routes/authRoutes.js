@@ -11,7 +11,7 @@ router.post("/register", async (req, res) => {
     await user.save();
     res.json({ message: "User created" });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ message: "Email already exists" });
   }
 });
 
@@ -26,6 +26,16 @@ router.post("/login", async (req, res) => {
     process.env.JWT_SECRET
   );
   res.json({ token, user });
+});
+
+router.get("/users", async (req, res) => {
+  const users = await User.find({}, { password: 0 });
+  res.json(users);
+});
+
+router.delete("/users/:id", async (req, res) => {
+  await User.findByIdAndDelete(req.params.id);
+  res.json({ message: "User deleted" });
 });
 
 module.exports = router;
