@@ -20,4 +20,18 @@ router.post("/", async (req, res) => {
   res.json(record);
 });
 
+router.put("/:id", async (req, res) => {
+  const updated = await Health.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true }
+  );
+  res.json(updated);
+});
+
+router.delete("/:id", async (req, res) => {
+  await Health.findByIdAndDelete(req.params.id);
+  res.json({ message: "Deleted" });
+});
+
 module.exports = router;

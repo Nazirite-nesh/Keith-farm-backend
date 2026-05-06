@@ -13,13 +13,22 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/update", async (req, res) => {
-  const { feedId, type, quantity, note } = req.body;
+  const { feedId, type, quantity } = req.body;
   const feed = await Feed.findById(feedId);
   if (type === "IN") feed.quantity += Number(quantity);
   if (type === "OUT") feed.quantity -= Number(quantity);
   if (type === "ADJUST") feed.quantity = Number(quantity);
   await feed.save();
   res.json(feed);
+});
+
+router.put("/:id", async (req, res) => {
+  const updated = await Feed.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true }
+  );
+  res.json(updated);
 });
 
 router.delete("/:id", async (req, res) => {
