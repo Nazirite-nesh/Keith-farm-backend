@@ -4,7 +4,8 @@ const feedSchema = new mongoose.Schema({
   name: String,
   unit: String,
   quantity: { type: Number, default: 0 },
-  reorderLevel: Number
+  reorderLevel: Number,
+  createdBy: String
 });
 
 module.exports = mongoose.model("Feed", feedSchema);

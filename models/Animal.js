@@ -11,6 +11,7 @@ const animalSchema = new mongoose.Schema({
     type: String,
     default: "Active"
   }
+  createdBy: String
 }, { timestamps: true });
 
 module.exports = mongoose.model("Animal", animalSchema);

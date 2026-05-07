@@ -7,6 +7,7 @@ const eggSchema = new mongoose.Schema({
   broken: Number,
   net: Number,
   notes: String
+  createdBy: String
 }, { timestamps: true });
 
 module.exports = mongoose.model("Egg", eggSchema);
