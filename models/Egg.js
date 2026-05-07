@@ -6,7 +6,7 @@ const eggSchema = new mongoose.Schema({
   collected: Number,
   broken: Number,
   net: Number,
-  notes: String
+  notes: String,
   createdBy: String
 }, { timestamps: true });
 

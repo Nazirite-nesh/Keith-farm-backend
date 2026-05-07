@@ -10,7 +10,7 @@ const animalSchema = new mongoose.Schema({
   status: {
     type: String,
     default: "Active"
-  }
+  },
   createdBy: String
 }, { timestamps: true });
 

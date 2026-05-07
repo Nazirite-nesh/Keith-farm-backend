@@ -10,7 +10,7 @@ const healthSchema = new mongoose.Schema({
   medication: String,
   cost: Number,
   nextDueDate: Date,
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
   createdBy: String
 }, { timestamps: true });
 
