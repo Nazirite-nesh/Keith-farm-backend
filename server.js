@@ -12,6 +12,7 @@ app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/income", require("./routes/incomeRoutes"));
 app.use("/api/expense", require("./routes/expenseRoutes"));
 app.use("/api/animals", require("./routes/animalRoutes"));
+app.use("/api/eggsales", require("./routes/eggSaleRoutes"));
 app.use("/api/incubator", require("./routes/incubatorRoutes"));
 app.use("/api/eggs", require("./routes/eggRoutes"));
 app.use("/api/feed", require("./routes/feedRoutes"));
