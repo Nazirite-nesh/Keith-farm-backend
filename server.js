@@ -16,6 +16,7 @@ app.use("/api/eggsales", require("./routes/eggSaleRoutes"));
 app.use("/api/incubator", require("./routes/incubatorRoutes"));
 app.use("/api/eggs", require("./routes/eggRoutes"));
 app.use("/api/feed", require("./routes/feedRoutes"));
+app.use("/api/alerts", require("./routes/alertRoutes"));
 app.use("/api/health", require("./routes/healthRoutes"));
 
 mongoose.connect(process.env.MONGO_URI)
