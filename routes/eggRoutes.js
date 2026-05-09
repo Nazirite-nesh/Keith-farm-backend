@@ -7,9 +7,9 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { zone, collected, broken, notes } = req.body;
+  const { zone, collected, broken, notes, createdBy } = req.body;
   const net = collected - broken;
-  const record = new Egg({ zone, collected, broken, net, notes });
+  const record = new Egg({ zone, collected, broken, net, notes, createdBy });
   await record.save();
   res.json(record);
 });
