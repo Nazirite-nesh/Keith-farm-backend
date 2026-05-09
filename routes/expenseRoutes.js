@@ -7,16 +7,14 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const newData = new Expense({ ...req.body, date: new Date() });
+  const newData = new Expense({ ...req.body });
   await newData.save();
   res.json(newData);
 });
 
 router.put("/:id", async (req, res) => {
   const updated = await Expense.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true }
+    req.params.id, req.body, { new: true }
   );
   res.json(updated);
 });

@@ -16,9 +16,7 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   const total = req.body.quantity * req.body.unitPrice;
   const updated = await Income.findByIdAndUpdate(
-    req.params.id,
-    { ...req.body, total },
-    { new: true }
+    req.params.id, { ...req.body, total }, { new: true }
   );
   res.json(updated);
 });

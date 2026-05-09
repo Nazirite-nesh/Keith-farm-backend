@@ -18,9 +18,7 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   const updated = await Animal.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true }
+    req.params.id, req.body, { new: true }
   );
   res.json(updated);
 });

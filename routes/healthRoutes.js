@@ -14,7 +14,8 @@ router.post("/", async (req, res) => {
     await Expense.create({
       category: "Veterinary",
       amount: req.body.cost,
-      notes: req.body.description
+      notes: req.body.description,
+      createdBy: req.body.createdBy
     });
   }
   res.json(record);
@@ -22,9 +23,7 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   const updated = await Health.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true }
+    req.params.id, req.body, { new: true }
   );
   res.json(updated);
 });
